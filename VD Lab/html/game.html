@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="../java/script.js"></script>
+    <title>Asocijacije</title>
+</head>
+<body background="../images/bg.jpg">
+
+    <!--<header>&nbsp;</header>-->
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                <div class="timer"><h5>Preostalo vreme = <span id="timer"></span></h5></div>
+
+                <button type="button" class="btn btn-primary" onclick="show('65','1')" id="A1">А1</button>
+                <button type="button" class="btn btn-primary" onclick="show('65','2')" id="A2">А2</button>
+                <button type="button" class="btn btn-primary" onclick="show('65','3')" id="A3">А3</button>
+                <button type="button" class="btn btn-primary" onclick="show('65','4')" id="A4">А4</button>
+                <button type="button" class="btn btn-primary" onclick="check_answer('65')" id="A">А</button>
+
+                <button type="button" class="btn btn-primary" onclick="show('66','1')" id="B1">B1</button>
+                <button type="button" class="btn btn-primary" onclick="show('66','2')" id="B2">B2</button>
+                <button type="button" class="btn btn-primary" onclick="show('66','3')" id="B3">B3</button>
+                <button type="button" class="btn btn-primary" onclick="show('66','4')" id="B4">B4</button>
+                <button type="button" class="btn btn-primary" onclick="check_answer('66')" id="B">B</button>
+
+                <button type="button" class="btn btn-primary" onclick="show('86','1')" id="V1">V1</button>
+                <button type="button" class="btn btn-primary" onclick="show('86','2')" id="V2">V2</button>
+                <button type="button" class="btn btn-primary" onclick="show('86','3')" id="V3">V3</button>
+                <button type="button" class="btn btn-primary" onclick="show('86','4')" id="V4">V4</button>
+                <button type="button" class="btn btn-primary" onclick="check_answer('86')" id="V">V</button>
+
+                <button type="button" class="btn btn-primary" onclick="show('71','1')" id="G1">G1</button>
+                <button type="button" class="btn btn-primary" onclick="show('71','2')" id="G2">G2</button>
+                <button type="button" class="btn btn-primary" onclick="show('71','3')" id="G3">G3</button>
+                <button type="button" class="btn btn-primary" onclick="show('71','4')" id="G4">G4</button>
+                <button type="button" class="btn btn-primary" onclick="check_answer('71')" id="G">G</button>
+
+                <button type="button" class="btn btn-primary" id="Konacno">Konačno rešenje</button>
+                <button type="button" class="btn btn-primary" onclick="next_turn()" id="Dalje">Dalje<img src="../images/SadEmoji.png" width="25" height="25"></button>
+            </div>   
+        </div>
+    </div>
+
+    
+    <form class="first_player_form">
+        <label for="fname" id="p1label"><h4>Player one</h4></label><br>
+        <input type="text" id="fname" name="fname"><br>
+      </form>
+
+      <form class="second_player_form">
+        <label for="fname" id="p2label"><h4>Player two</h4></label><br>
+        <input type="text" id="fname" name="fname"><br>
+      </form>
+
+</body>
+</html>

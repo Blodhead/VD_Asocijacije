@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../java/script.js"></script>
+    <title>Asocijacije</title>
+</head>
+<body background="../images/bg.jpg">
+    
+    <div class="container">
+
+        <div class="row">
+        <div class="col-12">&nbsp;</div>
+        </div>
+
+        <div class="row">
+            <div class="col-5"></div>
+        <div class="col-4"><h3>Pravila igre:</h3></div>
+            <div class="col-3"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">&nbsp;</div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-2">&nbsp</div>
+            <div class="col-8">
+
+                <div class="rules border border-secondary rounded">
+
+                    <p>-U igri asocijacije postoje četiri sporedne asocijacije, pomoću kojih treba rešiti glavnu asocijaciju.</p>
+                    <p>-Rešenje svake sporedne asocijacije je neki pojam na koji asociraju četiri pojma u njegovoj koloni.</p>
+                    <p>-Na početku su svi pojmovi skriveni, a dva igrača otkrivaju jedan po jedan.</p>
+                    <p>-Nakon otkrivanja pojma, igrač ima mogućnost da pogađa ili glavnu ili sporednu asocijaciju.</p>
+                    <p>-Za rešenje sporedne asocijacije se dobija 5 poena plus broj neotkrivenih pojmova u njegovoj koloni. </p>
+                    <p>-Za rešenje glavne asocijacije se dobija 10 poena plus broj svih neotkrivenih pojmova. </p>
+                    <p>-Svaki igrač na svom potezu ima maksimalno 10 sekundi, a ukoliko ne želi u tom potezu da pogađa asocijaciju može da pritisne dugme <i>Dalje</i> i da ranije završi potez.</p>
+        
+                </div>
+                
+            </div>
+            <div class="col-2">&nbsp</div>
+
+        </div>
+
+    </div>
+
+    <form class="first_player_form">
+        <label for="fname"><h4>Prvi igrač:</h4></label><br>
+        <input type="text" id="player1name" name="player1name"><br>
+        <p>&nbsp;</p>
+        <input type="button" class="btn btn-primary" id="check1" value="Potvrdi" onclick="saveP1()">
+    </form>
+
+    <form class="second_player_form">
+        <label for="fname"><h4>Drugi igrač:</h4></label><br>
+        <input type="text" id="player2name" name="player2name"><br>
+        <p>&nbsp;</p>
+        <input type="button" class="btn btn-danger" id="check2" value="Potvrdi" onclick="saveP2()">
+    </form>
+
+
+</body>
+</html>

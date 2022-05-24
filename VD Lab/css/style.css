@@ -1,0 +1,188 @@
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #0863ec !important;
+}
+
+
+#A1{
+    position: absolute;
+    width: 200px;
+    left: 10%;
+    top: 100px;
+}
+#A2{
+    position: absolute;
+    width: 200px;
+    left: 15%;
+    top: 150px;
+}
+#A3{
+    position: absolute;
+    width: 200px;
+    left: 20%;
+    top: 200px;
+}
+#A4{
+    position: absolute;
+    width: 200px;
+    left: 25%;
+    top: 250px;
+}
+#A{
+    position: absolute;
+    width: 200px;
+    left: 25%;
+    top: 300px;
+}
+
+
+
+#B1{
+    position: absolute;
+    width: 200px;
+    right: 10%;
+    top: 100px;
+}
+#B2{
+    position: absolute;
+    width: 200px;
+    right: 15%;
+    top: 150px;
+}
+#B3{
+    position: absolute;
+    width: 200px;
+    right: 20%;
+    top: 200px;
+}
+#B4{
+    position: absolute;
+    width: 200px;
+    right: 25%;
+    top: 250px;
+}
+#B{
+    position: absolute;
+    width: 200px;
+    right: 25%;
+    top: 300px;
+}
+
+
+
+
+#V1{
+    position: absolute;
+    width: 200px;
+    left: 10%;
+    top: 650px;
+}
+#V2{
+    position: absolute;
+    width: 200px;
+    left: 15%;
+    top: 600px;
+}
+#V3{
+    position: absolute;
+    width: 200px;
+    left: 20%;
+    top: 550px;
+}
+#V4{
+    position: absolute;
+    width: 200px;
+    left: 25%;
+    top: 500px;
+}
+#V{
+    position: absolute;
+    width: 200px;
+    left: 25%;
+    top: 450px;
+}
+
+
+
+#G1{
+    position: absolute;
+    width: 200px;
+    right: 10%;
+    top: 650px;
+}
+#G2{
+    position: absolute;
+    width: 200px;
+    right: 15%;
+    top: 600px;
+}
+#G3{
+    position: absolute;
+    width: 200px;
+    right: 20%;
+    top: 550px;
+}
+#G4{
+    position: absolute;
+    width: 200px;
+    right: 25%;
+    top: 500px;
+}
+#G{
+    position: absolute;
+    width: 200px;
+    right: 25%;
+    top: 450px;
+}
+
+#Dalje{
+    position: absolute;
+    width: 150px;
+    left: 43%;
+    top: 130px;
+}
+
+#Konacno{
+  
+    position: absolute;
+
+    left: 33%;
+    right: 33%;
+    top: 380px;
+
+}
+
+.first_player_form{
+
+    position: absolute;
+
+    left: 10%;
+    right: 75%;
+    text-align: left;
+    top: 340px;
+}
+
+.second_player_form{
+    position: absolute;
+    left: 75%;
+    right: 10%;
+    text-align: right;
+    top: 340px;
+}
+
+
+.timer{
+    position: absolute;
+
+    font-size:20px;
+    left: 40%;
+    right: 35%;
+    top: 35px;
+}
+
+.rules{
+font-size: 18px;
+border: solid;
+backdrop-filter: blur(8px) saturate(150%) contrast(40%) drop-shadow(4px 4px 10px gray);
+width: 700px;
+height: auto;
+}
