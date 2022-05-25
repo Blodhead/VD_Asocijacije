@@ -1,4 +1,3 @@
-
 var player1;
 var player2;
 var p1Flag = false;
@@ -13,6 +12,8 @@ var guessed = [false,false,false,false];
 var opened = [false,false,false,false];
 var focused_element;
 var global_timer = 10;
+var points1 = 0;
+var points2 = 0;
 
 window.onload = function (){  
     //window.localStorage.clear();
@@ -98,6 +99,8 @@ function next_turn(){
         for(i = 0; i < 4; i++){
             if(guessed[i] != true) document.getElementById(String.fromCharCode(id_char[i])).disabled = false;
         }
+        document.getElementById("Konacno").disabled = false;
+        document.getElementById("Dalje").disabled = false;        
     }
 
 }
@@ -111,58 +114,71 @@ function check_final(){
     || (res.normalize("NFD").replace(/[\u0300-\u036f]/g, "") == pokusaj) 
     || (locase == pokusaj
     || ((locase.normalize("NFD").replace(/[\u0300-\u036f]/g, "") == pokusaj)))){
+
         kraj = true;
         document.getElementById("Konacno").value = model.matrix[combination].resenje[0];
         document.getElementById("Konacno").disabled = true;
-        document.getElementById("Konacno").className = "btn btn-primary ";
+
+
         if(turn == 1){
+            document.getElementById("Konacno").className = "btn btn-primary ";
             kraj = true;
             if(button_list.length != 0)
-            while(button_list.length > 0){
-                var j = 0;
-                var slovo = button_list[j].id.slice(0,1);
-                var broj = button_list[j].id.slice(1,2);
-                button_list[j].className = "btn btn-primary ";
-                show(""+slovo.charCodeAt(0),broj);
-            }
 
-            for(i = 0; i < 4; i++){//
+            for(i = 0; i < 4; i++){
 
                 if(guessed[i] == false){
                     document.getElementById(String.fromCharCode(id_char[i])).value =  model.matrix[combination][id_char[i]][0];
                     document.getElementById(String.fromCharCode(id_char[i])).className = "btn btn-primary ";
                     document.getElementById(String.fromCharCode(id_char[i])).disabled = true;
+                    var arr = document.getElementsByClassName(String.fromCharCode(id_char[i]));
+                    for(j = 0;  j < 4; j++){
+                        arr[j].className = "btn btn-primary " + String.fromCharCode(id_char[i]);
+                        arr[j].innerHTML = model.matrix[combination][id_char[i]][j];
+                        arr[j].disabled = true;
+                    }
+
                 }
             }
             
             alert("Bobednik je: " + player1);
         }
         else {
-
             kraj = true;
-            document.getElementById("Konacno").value = model.matrix[combination].resenje[0];
-            document.getElementById("Konacno").disabled = true;
             document.getElementById("Konacno").className = "btn btn-danger ";
             if(button_list.length != 0)
-            while(button_list.length > 0){
-                var j = 0;
-                var slovo = button_list[j].id.slice(0,1);
-                var broj = button_list[j].id.slice(1,2);
-                button_list[j].className = "btn btn-danger ";
-                show(""+slovo.charCodeAt(0),broj);
-            }
 
             for(i = 0; i < 4; i++){
 
-            if(guessed[i] == false){
+                if(guessed[i] == false){
                     document.getElementById(String.fromCharCode(id_char[i])).value =  model.matrix[combination][id_char[i]][0];
                     document.getElementById(String.fromCharCode(id_char[i])).className = "btn btn-danger ";
                     document.getElementById(String.fromCharCode(id_char[i])).disabled = true;
+                    var arr = document.getElementsByClassName(String.fromCharCode(id_char[i]));
+                    for(j = 0;  j < 4; j++){
+                        arr[j].className = "btn btn-danger " + String.fromCharCode(id_char[i]);
+                        arr[j].innerHTML = model.matrix[combination][id_char[i]][j];
+                        arr[j].disabled = true;
+                    }
+
                 }
             }
             
             alert("Bobednik je: " + player2);
         }
+
+        document.getElementById("Dalje").disabled = true;
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        if(points1 > points2){
+            alert("Pobedio je " + player1 + " sa " + points1 + " : " + points2);
+        }else if(points2 > points1)
+            alert("Pobedio je " + player2 + " sa " + points2 + " : " + points1);
+            else alert("Nerešeno!");
+
+        //window.location.href = "../html/index.html"; ENDING, CONGRATS!!!
+
     }
     else {
         document.getElementById("Konacno").value = "Konacno resenje";
@@ -180,6 +196,9 @@ function enable_all(){
 
     for(j = 0; j < button_list.length; j++)
         button_list[j].disabled = false;
+
+        document.getElementById("Konacno").value = "Konačno rešenje";
+        document.getElementById("Konacno").disabled = true;
 
 }
 
@@ -213,15 +232,22 @@ function show(slovo, broj){
         case "71": {document.getElementById("G").disabled = false; opened[3] = true; break;}
     }
 
-    for(i = 0; i < 4; i++)
+    var count = 0;
+    for(i = 0; i < 4; i++){
         if(opened[i] == true && guessed[i] == false) {
             document.getElementById(String.fromCharCode(id_char[i])).value = String.fromCharCode(id_char[i]);
             document.getElementById(String.fromCharCode(id_char[i])).disabled = false;
         }
+        if(guessed[i]) count++;
+    }
+
+    if(count > 0){
+        document.getElementById("Konacno").disabled = false;
+        document.getElementById("Konacno").value = "Konačno rešenje";
+    }
 
     document.getElementById("" + String.fromCharCode(slovo) + broj).innerHTML = model.matrix[combination][slovo][broj];
     document.getElementById("" + String.fromCharCode(slovo) + broj).disabled = true;
-
 
     find_and_remove(slovo,broj);
 
@@ -233,18 +259,16 @@ function show(slovo, broj){
 
 function focus_element(element){
 
-    if(element == document.getElementById("Konacno")) {focused_element = element;element.value=''; return;}
-
     if(focused_element != null || element == null){
         for( i = 0; i < 4; i++){
             if(guessed[i] == false)
             document.getElementById(String.fromCharCode(id_char[i])).value = String.fromCharCode(id_char[i]);
         }
+        document.getElementById("Konacno").value = "Konačno rešenje";
         if(element == null) return;
     }
-
-    element.value='';
     focused_element = element;
+    element.value='';
 }
 
 function check_answer(){
@@ -269,6 +293,7 @@ function check_answer(){
             else if(turn == 2) document.getElementById(String.fromCharCode(id_char[j])).className = "btn btn-danger " + String.fromCharCode(id_char[j]);
 
             document.getElementById("Konacno").disabled = false;
+            document.getElementById("Konacno").value = "Konačno rešenje";
             temp = true;
 
             var arr = document.getElementsByClassName(String.fromCharCode(id_char[j]));
@@ -363,11 +388,23 @@ function startTimer() {
 
             }
 
-
-        document.getElementById("Konacno").innerHTML = model.matrix[combination].resenje[0];
+        document.getElementById("first_player_form").hidden = true;
+        document.getElementById("second_player_form").hidden = true;
+            
+        document.getElementById("Konacno").value = model.matrix[combination].resenje[0];
         document.getElementById("Konacno").disabled = true;
 
         document.getElementById("Dalje").disabled = true;
+
+        if(points1 > points2){
+            alert("Pobedio je " + player1 + " sa " + points1 + " : " + points2);
+        }else if(points2 > points1)
+            alert("Pobedio je " + player2 + " sa " + points2 + " : " + points1);
+            else alert("Nerešeno!");
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //window.location.href = "../html/index.html"; ENDING, CONGRATS!!!
 
     }
 
