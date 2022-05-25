@@ -20,45 +20,47 @@
 
                 <div class="timer"><h5>Preostalo vreme = <span id="timer"></span></h5></div>
 
-                <button type="button" class="btn btn-primary" onclick="show('65','1')" id="A1">А1</button>
-                <button type="button" class="btn btn-primary" onclick="show('65','2')" id="A2">А2</button>
-                <button type="button" class="btn btn-primary" onclick="show('65','3')" id="A3">А3</button>
-                <button type="button" class="btn btn-primary" onclick="show('65','4')" id="A4">А4</button>
-                <button type="button" class="btn btn-primary" onclick="check_answer('65')" id="A">А</button>
+                <button type="button" class="btn btn-info A" onclick="show('65','1')" id="A1">А1</button>
+                <button type="button" class="btn btn-info A" onclick="show('65','2')" id="A2">А2</button>
+                <button type="button" class="btn btn-info A" onclick="show('65','3')" id="A3">А3</button>
+                <button type="button" class="btn btn-info A" onclick="show('65','4')" id="A4">А4</button>
+                <input type="text" class="btn btn-info" onfocus="focus_element(this)" id="A" value="A"></button>
 
-                <button type="button" class="btn btn-primary" onclick="show('66','1')" id="B1">B1</button>
-                <button type="button" class="btn btn-primary" onclick="show('66','2')" id="B2">B2</button>
-                <button type="button" class="btn btn-primary" onclick="show('66','3')" id="B3">B3</button>
-                <button type="button" class="btn btn-primary" onclick="show('66','4')" id="B4">B4</button>
-                <button type="button" class="btn btn-primary" onclick="check_answer('66')" id="B">B</button>
+                <button type="button" class="btn btn-info B" onclick="show('66','1')" id="B1">B1</button>
+                <button type="button" class="btn btn-info B" onclick="show('66','2')" id="B2">B2</button>
+                <button type="button" class="btn btn-info B" onclick="show('66','3')" id="B3">B3</button>
+                <button type="button" class="btn btn-info B" onclick="show('66','4')" id="B4">B4</button>
+                <input type="text" class="btn btn-info" onfocus="focus_element(this)" id="B" value="B"></button>
 
-                <button type="button" class="btn btn-primary" onclick="show('86','1')" id="V1">V1</button>
-                <button type="button" class="btn btn-primary" onclick="show('86','2')" id="V2">V2</button>
-                <button type="button" class="btn btn-primary" onclick="show('86','3')" id="V3">V3</button>
-                <button type="button" class="btn btn-primary" onclick="show('86','4')" id="V4">V4</button>
-                <button type="button" class="btn btn-primary" onclick="check_answer('86')" id="V">V</button>
+                <button type="button" class="btn btn-info V" onclick="show('86','1')" id="V1">V1</button>
+                <button type="button" class="btn btn-info V" onclick="show('86','2')" id="V2">V2</button>
+                <button type="button" class="btn btn-info V" onclick="show('86','3')" id="V3">V3</button>
+                <button type="button" class="btn btn-info V" onclick="show('86','4')" id="V4">V4</button>
+                <input type="text" class="btn btn-info" onfocus="focus_element(this)" id="V" value="V"></button>
 
-                <button type="button" class="btn btn-primary" onclick="show('71','1')" id="G1">G1</button>
-                <button type="button" class="btn btn-primary" onclick="show('71','2')" id="G2">G2</button>
-                <button type="button" class="btn btn-primary" onclick="show('71','3')" id="G3">G3</button>
-                <button type="button" class="btn btn-primary" onclick="show('71','4')" id="G4">G4</button>
-                <button type="button" class="btn btn-primary" onclick="check_answer('71')" id="G">G</button>
+                <button type="button" class="btn btn-info G" onclick="show('71','1')" id="G1">G1</button>
+                <button type="button" class="btn btn-info G" onclick="show('71','2')" id="G2">G2</button>
+                <button type="button" class="btn btn-info G" onclick="show('71','3')" id="G3">G3</button>
+                <button type="button" class="btn btn-info G" onclick="show('71','4')" id="G4">G4</button>
+                <input type="text" class="btn btn-info" onfocus="focus_element(this)" id="G" value="G"></button>
 
-                <button type="button" class="btn btn-primary" id="Konacno">Konačno rešenje</button>
-                <button type="button" class="btn btn-primary" onclick="next_turn()" id="Dalje">Dalje<img src="../images/SadEmoji.png" width="25" height="25"></button>
+                <input type="text" class="btn btn-info" onclick="focus_element(this)" id="Konacno" value="Konačno rešenje"></button>
+                <button type="button" class="btn btn-info" onclick="next_turn()" id="Dalje">Dalje<img src="../images/SadEmoji.png" width="25" height="25"></button>
             </div>   
         </div>
     </div>
 
     
-    <form class="first_player_form">
+    <form class="first_player_form" id="first_player_form">
         <label for="fname" id="p1label"><h4>Player one</h4></label><br>
-        <input type="text" id="fname" name="fname"><br>
+        <progress value="0" max="20" id="progressBar"></progress>
+        <input type="button" id="confirm1" class="btn btn-primary" onclick="check_answer()" name="fname" value="Potvrdi"><br>
       </form>
 
-      <form class="second_player_form">
+      <form class="second_player_form" id="second_player_form">
         <label for="fname" id="p2label"><h4>Player two</h4></label><br>
-        <input type="text" id="fname" name="fname"><br>
+        <progress value="0" max="20" class="w3-red" id="progressBar2"></progress>
+        <input type="button" id="confirm2" class="btn btn-danger" onclick="check_answer()" name="fname" value="Potvrdi"><br>
       </form>
 
 </body>

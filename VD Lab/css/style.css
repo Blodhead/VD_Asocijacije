@@ -179,6 +179,11 @@
     top: 35px;
 }
 
+#progressBar2{
+transform: rotate(180deg);
+
+}
+
 .rules{
 font-size: 18px;
 border: solid;
